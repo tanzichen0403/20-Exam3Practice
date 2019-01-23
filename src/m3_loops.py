@@ -6,8 +6,8 @@ This problem provides practice at:
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Zichen Tan.
+"""  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ###############################################################################
 # Students:
@@ -31,7 +31,6 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
 
 import simple_testing as st
 import math
-
 
 def main():
     """ Calls the   TEST   functions in this module. """
@@ -110,6 +109,11 @@ def run_test_practice_problem3():
              st.SimpleTestCase(practice_problem3,
                                [0, 1, 1.414213562373],
                                [286602]),
+             st.SimpleTestCase(practice_problem3,
+                               [0, 1, 1.414213562373],
+                               [286602]),
+             
+
              ]
     # 14th test:
     big_list = []
@@ -135,6 +139,7 @@ def run_test_practice_problem3():
     # SUGGESTION: Ask an assistant to CHECK your tests to confirm
     #             that they are adequate tests!
     ###########################################################################
+
 
 
 def practice_problem3(start, n, threshold):
@@ -217,7 +222,18 @@ def practice_problem3(start, n, threshold):
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   < 15 minutes.
     ###########################################################################
-
+    t=[]
+    m=0
+    while True:
+        k=start
+        z=math.sin(k)+math.cos(k)
+        if z>=threshold:
+            t+=[k]
+            m=m+1
+        start=start+1
+        if m==n:
+            break
+    return t
 
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
