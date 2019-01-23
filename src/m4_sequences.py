@@ -6,8 +6,8 @@ This problem provides practice at:
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Zichen Tan.
+"""  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ###############################################################################
 # Students:
@@ -135,13 +135,19 @@ def practice_problem4a(sequence):
       :type sequence: list | tuple | string
     """
     ###########################################################################
-    # TODO: 2. Implement and test this function.
+    # DOne: 2. Implement and test this function.
     #     The testing code is already written for you (above).
     ###########################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:   15 minutes.
     ###########################################################################
+    t=[]
+    for i in range(len(sequence)-1):
+        if sequence[i]==sequence[i+1]:
+            t+=[i]
+    return t
+
 
 
 def run_test_practice_problem4b():
@@ -198,13 +204,25 @@ def practice_problem4b(sequence):
       :type sequence: (list | tuple) of (float | int)
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # Done: 3. Implement and test this function.
     #     The testing code is already written for you (above).
     ###########################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   10 minutes.
     ###########################################################################
+
+    z=len(sequence)
+    t=z//2
+    m=sequence[0]
+    for i in range(t):
+        if m<sequence[2*i]:
+            m=sequence[2*i]
+    if z%2!=0:
+        if m<sequence[-1]:
+            m=sequence[-1]
+    return m
+
 
 
 def run_test_practice_problem4c():
@@ -296,7 +314,7 @@ def practice_problem4c(points):
       :rtype: rg.Point | string
     """
     ###########################################################################
-    # TODO: 4. Implement and test this function.
+    # Done: 4. Implement and test this function.
     #     The testing code is already written for you (above).
     #
     # IMPORTANT: This problem is your LOWEST PRIORITY for preparing
@@ -307,8 +325,16 @@ def practice_problem4c(points):
     #    DIFFICULTY:      9
     #    TIME ESTIMATE:   15 minutes.
     ###########################################################################
-
-
+    for i in range(len(points)):
+        z=points[i]
+        x=z.x
+        y=z.y
+        if is_prime(x)&is_prime(y):
+            a=z.x
+            z.x=z.y
+            z.y=a
+            return z
+    return "Not found"
 def run_test_practice_problem4d():
     """ Tests the    practice_problem4d    function. """
     # -------------------------------------------------------------------------
@@ -399,6 +425,14 @@ def practice_problem4d(sequence):
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:   15 minutes.
     ###########################################################################
+    t=len(sequence)
+    n=0
+    for i in range(t-1):
+        if is_prime(sequence[i]):
+            if is_prime(sequence[i+1]):
+                if sequence[i]!=sequence[i+1]:
+                    n=n+sequence[i]
+    return n
 
 
 # -----------------------------------------------------------------------------
