@@ -432,6 +432,7 @@ def practice_problem4d(sequence):
             if is_prime(sequence[i+1]):
                 if sequence[i]!=sequence[i+1]:
                     n=n+sequence[i]
+                    
     return n
 
 
