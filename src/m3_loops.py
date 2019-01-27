@@ -113,7 +113,6 @@ def run_test_practice_problem3():
                                [0, 1, 1.414213562373],
                                [286602]),
 
-
              ]
     # 14th test:
     big_list = []
@@ -139,7 +138,10 @@ def run_test_practice_problem3():
     # SUGGESTION: Ask an assistant to CHECK your tests to confirm
     #             that they are adequate tests!
     ###########################################################################
-
+    print("tests1")
+    n=practice_problem3(1,5,1)
+    print("The correct returned value is: [-1, 0, 1, 2, 3, 5]")
+    print("Your code returned ..........: ",n)
 
 
 def practice_problem3(start, n, threshold):
